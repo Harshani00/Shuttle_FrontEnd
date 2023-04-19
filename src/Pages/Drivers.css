@@ -1,0 +1,35 @@
+.drivers
+{
+position: absolute;
+width: 70px;
+height: 31px;
+left: 312px;
+top: 70px;
+font-family: 'DM Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 31px;
+
+/* Light Version/Type/Text Dark */
+
+color: #06152B;
+
+}
+.button
+{
+position: absolute;
+position: absolute;
+width: 150px;
+height: 40px;
+left: 1170px;
+top: 167px;
+background: #3699FF;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+color: #FFFFFF;
+line-height: 18px;
+border-radius: 5px;
+}

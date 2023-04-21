@@ -3,86 +3,61 @@ import "./Login.css";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-function Login() {
-  const [errorMessages, setErrorMessages] = useState({});
+function App() {
+  const [errorMessages, ] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // added state variable
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    validateForm();
+    setIsSubmitted(true);
+    // Your logic for handling form submission goes here
   };
 
-  const validateForm = () => {
-    const errors = {};
-    let isValid = true;
-
-    if (userName.trim() === "") {
-      errors.userName = "User name is required";
-      isValid = false;
-    }
-
-    if (password.trim() === "") {
-      errors.password = "Password is required";
-      isValid = false;
-    } 
-
-    setErrorMessages(errors);
-    if (isValid) {
-      setIsSubmitted(true);
-    }
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
   };
 
   const renderErrorMessage = (name) =>
-    name in errorMessages && <div className="error">{errorMessages[name]}</div>;
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
+    name === errorMessages.name && (
+      <div className="error">{errorMessages.message}</div>
+    );
 
   const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <input
-            type="text"
-            placeholder="Enter User Name"
-            className="name"
-            name="uname"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            required
-          />
-          {renderErrorMessage("userName")}
+          <input type="text" placeholder="Enter User Name" name="uname" required />
+          {renderErrorMessage("uname")}
         </div>
-        <div className="input-container">
-          {showPassword ? (
-            <VisibilityIcon
-              className="VisibilityIcon"
-              onClick={togglePasswordVisibility}
-            />
-          ) : (
-            <VisibilityOffIcon
-              className="VisibilityOffIcon"
-              onClick={togglePasswordVisibility}
-            />
-          )}
 
-          <input
-            type={showPassword ? "text" : "password"} // use state variable to control input type
-            placeholder="Password"
-            className="name"
-            name="pass"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          {renderErrorMessage("password")}
+        <div className="input-container">
+          <div style={{ position: "relative" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder={showPassword ? "Password" : "Password *"}
+              name="pass"
+              required
+            />
+            <div style={{ position: "absolute", top: "50%", right: "10px", transform: "translateY(-50%)" }}>
+              {showPassword ? (
+                <VisibilityIcon
+                  className="VisibilityIcon"
+                  onClick={handleShowPassword}
+                />
+              ) : (
+                <VisibilityOffIcon
+                  className="VisibilityOffIcon"
+                  onClick={handleShowPassword}
+                />
+              )}
+            </div>
+          </div>
+          {renderErrorMessage("pass")}
         </div>
+
         <div className="button-container">
-          <button type="Submit">Login</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>
@@ -91,19 +66,12 @@ function Login() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="img">
-          <div className="img-container">
-            <img src="./Images/logo.png" alt="" className="profile" />
-          </div>
-        </div>
-        <div className="title">Sign In</div>
+        <div className="title">Log In</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
+      <img src="./Images/logo.png" alt="logo" className="img" />
     </div>
   );
 }
 
-export default Login;
-
-
-
+export default App;

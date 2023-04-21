@@ -26,8 +26,7 @@ export default function Profile() {
       {isOpen && (
         <div className='dropdown-items'>
           <div className='dropdown-item'>Profile</div>
-          <div className='dropdown-item'>Settings</div>
-          <div className='dropdown-item'>Help</div>
+         
         </div>
       )}
     </div>

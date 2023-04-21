@@ -6,9 +6,14 @@ import "./Buses.css";
 export default function Dashboard() {
   return (
     <div>
-      
-      <Profile/>
+     
+     
+     
+     
+     
+     
       <SideBar/>
+      <Profile/>
 
       <div className="buses">Buses</div>
 

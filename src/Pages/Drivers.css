@@ -33,3 +33,66 @@ color: #FFFFFF;
 line-height: 18px;
 border-radius: 5px;
 }
+table {
+    border-collapse: collapse;
+    width: 954px;
+    margin-left: 312px;
+    margin-top: 226px;
+  }
+  
+  th{
+    background: #ffffff; 
+    box-shadow: inset 0px -2px 0px #E3E5E8;
+    width: 296.42px;
+    height: Hug(52)px;
+    padding: 16px;
+    gap: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color:#8F97A3;
+    
+
+  }
+
+  td {
+    width: 187.39px;
+    height: Hug (48px);
+    padding: 14px 16px;
+    background: #FFFFFF;
+    
+    text-align: left;
+  }
+  
+  th {
+    background-color: #E5E5E5;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #E5E5E5;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+  }
+  
+  .actions button {
+    padding: 4px;
+    margin-right: 4px;
+  }
+  
+  .search {
+    margin-bottom: 16px;
+  }
+  
+  .search input[type="text"] {
+    padding: 8px;
+    margin-right: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

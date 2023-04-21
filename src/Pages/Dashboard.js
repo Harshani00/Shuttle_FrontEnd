@@ -9,9 +9,9 @@ import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
 export default function Dashboard() {
   return (
     <div>
-      
-      <Profile/>
       <SideBar/>
+      <Profile/>
+      
       <div className="Dashboard">DashBoard</div>
 
       <div class="container">

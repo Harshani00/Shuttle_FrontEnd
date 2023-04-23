@@ -1,24 +1,29 @@
 import Profile from "../Components/Profile/Profile";
 import SideBar from "../Components/SideBar/SideBar";
-import React from "react";
 import "./Drivers.css";
+import React, { useState } from 'react';
+
 
 const driversData = [
-  { name: "John Smith", age: 25 },
-  { name: "Jane Doe", age: 30 },
-  { name: "Bob Johnson", age: 40 },
+  { driverid: "001", drivername: "John Smith", nic: "123456789V", tele: "0712345678" },
+  { driverid: "002", drivername: "Jane Doe", nic: "987654321V", tele: "0776543210" },
+  { driverid: "003", drivername: "Bob Johnson", nic: "456789123V", tele: "0765432109" },
 ];
 
-const Table = () => {
-  const [data, setData] = React.useState(driversData);
-  const [editingIndex, setEditingIndex] = React.useState(null);
-  const [searchTerm, setSearchTerm] = React.useState("");
 
-  const handleAdd = () => {
-    const newData = [...data, { name: "", age: "" }];
-    setData(newData);
-    setEditingIndex(newData.length - 1);
+const Table = () => {
+  const [data, setData] = useState(driversData);
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleAddNewDriver = () => {
+    const newDriver = { driverid: '', drivername: '', nic: '', tele: '' };
+    setData(prevData => [...prevData, newDriver]);
+    setEditingIndex(data.length); 
   };
+  
+  
+    
 
   const handleEdit = (index) => {
     setEditingIndex(index);
@@ -31,13 +36,11 @@ const Table = () => {
     setEditingIndex(null);
   };
 
-  const handleSave = (index, updatedData) => {
-    const newData = [...data];
-    newData[index] = updatedData;
-    setData(newData);
-    setEditingIndex(null);
+  const handleSave = (index, newData) => {
+    const updatedData = [...data];
+    updatedData[index] = newData;
+    setData(updatedData);
   };
-
   const handleCancel = () => {
     setEditingIndex(null);
   };
@@ -48,13 +51,17 @@ const Table = () => {
 
   const filteredData = data.filter(
     (d) =>
-      d.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      d.age.toString().toLowerCase().includes(searchTerm.toLowerCase())
+      d.drivername.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      d.driverid.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+      d.nic.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      d.tele.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div>
+      <div className=" search-container">
       <input type="text" placeholder="Search..." onChange={handleSearch} />
+      </div>
       <table>
         <thead>
           <tr>
@@ -105,7 +112,7 @@ const Table = () => {
                   />
                 </td>
                 <td>
-                  <button onClick={() => handleSave(index, d)}>Save</button>
+                <button onClick={() => handleSave(index, d)}>Save</button>
                   <button onClick={handleCancel}>Cancel</button>
                 </td>
               </tr>
@@ -124,23 +131,24 @@ const Table = () => {
           )}
         </tbody>
       </table>
-      <button onClick={handleAdd}>Add</button>
+      <button className="button1" onClick={() => handleAddNewDriver()}>
+        ADD NEW DRIVER
+        </button>
     </div>
   );
 };
 
+
 export default function Dashboard() {
+  
+  
+
   return (
     <div>
       <Profile />
       <SideBar />
-
       <div className="drivers">Drivers</div>
-
-      <div className="addbutton">
-        <button className="button">ADD NEW DRIVERS</button>
-      </div>
-
+      
       <Table />
     </div>
   );

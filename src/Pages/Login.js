@@ -2,16 +2,42 @@ import React, { useState } from "react";
 import "./Login.css";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+function Login()
+{
+const [username,setUsername] = useState('')
+const [password,setPassword] = useState('')
+
+
+async function submit(e)
+{
+  try{
+    await axios.post("http://localhost:3400/login/log",{username,password}) }
+    catch{ console.log(e)
+
+    }
+
+}
+
+}
 
 function App() {
+  const logo = process.env.PUBLIC_URL + "/Images/logo.png"
   const [errorMessages, ] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate =useNavigate();
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmitted(true);
     // Your logic for handling form submission goes here
+    //redirect the user to the dashboard page
+    navigate('/Dashboard')
   };
 
   const handleShowPassword = () => {
@@ -22,9 +48,8 @@ function App() {
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
-
   const renderForm = (
-    <div className="form">
+    <div className="form" action="/login/log" method="POST">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <input type="text" placeholder="Enter User Name" name="uname" required />
@@ -64,12 +89,21 @@ function App() {
   );
 
   return (
+    <div>
+    
+    
     <div className="app">
+    
+    <img src={process.env.PUBLIC_URL + logo} alt="Logo" />
+   
+
+
       <div className="login-form">
         <div className="title">Log In</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
-      <img src="./Images/logo.png" alt="logo" className="img" />
+      
+    </div>
     </div>
   );
 }

@@ -3,28 +3,9 @@ import "./Login.css";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-
-function Login()
-{
-const [username,setUsername] = useState('')
-const [password,setPassword] = useState('')
-
-
-async function submit(e)
-{
-  try{
-    await axios.post("http://localhost:3400/login/log",{username,password}) }
-    catch{ console.log(e)
-
-    }
-
-}
-
-}
 
 function App() {
-  const logo = process.env.PUBLIC_URL + "/Images/logo.png"
+  const logo1 = process.env.PUBLIC_URL + "/Images/logo1.png"
   const [errorMessages, ] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -49,7 +30,7 @@ function App() {
       <div className="error">{errorMessages.message}</div>
     );
   const renderForm = (
-    <div className="form" action="/login/log" method="POST">
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <input type="text" placeholder="Enter User Name" name="uname" required />
@@ -94,7 +75,7 @@ function App() {
     
     <div className="app">
     
-    <img src={process.env.PUBLIC_URL + logo} alt="Logo" />
+    <img src={process.env.PUBLIC_URL + logo1} alt="Logo1" />
    
 
 

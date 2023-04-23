@@ -23,13 +23,14 @@ export default function Dashboard() {
         </div>
 
         <div class="column">
-        Drivers
-      
+        Drivers<br></br>
+        3
         <PersonOutlineIcon className="PersonOutlineIcon"/>
        </div>
 
        <div class="column">
-       Schedule 
+       Schedule <br></br>
+       8
        <CalendarMonthSharpIcon className="CalendarMonthSharpIcon"/>
        </div>
       </div>
@@ -45,7 +46,7 @@ export default function Dashboard() {
         <div className="Seats">Seat Availabilty</div>
         <img src="./Images/seat.png" alt="" className="img"/>
         <div className="availability">
-           20 <br></br>
+           40 <br></br>
            Seats Available
         </div>
         

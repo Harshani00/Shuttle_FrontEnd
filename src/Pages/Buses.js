@@ -5,9 +5,9 @@ import React, { useState } from 'react';
 
 
 const busesData = [
-  { busid: "001", busno: "John Smith", capacity: "123456789V"  },
-  { busid: "002", busno: "Jane Doe", capacity: "987654321V"  },
-  { busid: "003", busno: "Bob Johnson", capacity: "456789123V" },
+  { busid: "001", busno: "NC 2567", capacity: "50"  },
+  { busid: "002", busno: "ND 2858", capacity: "50"  },
+  { busid: "003", busno: "NC 4566", capacity: "50" },
 ];
 
 

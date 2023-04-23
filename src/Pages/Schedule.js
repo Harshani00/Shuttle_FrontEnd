@@ -5,12 +5,11 @@ import React, { useState } from 'react';
 
 
 const ScheduleData = [
-  { schid: "001", busno: "John Smith", drivername: "123456789V", startdate: "0712345678",enddate:"10-03-2023",days:"5",departure:"7.30 AM",arrival:"8.00AM"},
-  { schid: "002", busno: "Jane Doe", nic: "987654321V", tele: "0776543210" },
-  { schid: "003", busno: "Bob Johnson", nic: "456789123V", tele: "0765432109" },
+  { schid: "001", busno: "NC 2567", drivername: "Jhon Smith", startdate: "30-04-2023",enddate:"09-05-2023",days:"Thu-Fri",departure:"8.00 AM",arrival:"9.00AM"},
+  { schid: "002", busno: "NC 4566", drivername: "Jane Doe", startdate: "03-04-2023",enddate:"13-05-2023",days:"Mon-Tue",departure:"8.00 AM",arrival:"9.00AM"},
+  { schid: "003", busno: "NK 2671", drivername: "Bob Johnson", startdate: "05-05-2023",enddate:"15-05-2023",days:"Wed-Thu",departure:"8.00 AM",arrival:"9.00AM"},
+
 ];
-
-
 const Table = () => {
   const [data, setData] = useState(ScheduleData);
   const [editingIndex, setEditingIndex] = useState(null);

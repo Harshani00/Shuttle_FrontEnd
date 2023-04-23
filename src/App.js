@@ -5,14 +5,8 @@ import Dashboard from "./Pages/Dashboard"
 import Buses from "./Pages/Buses"
 import Drivers from "./Pages/Drivers"
 import Livemap from "./Pages/Livemap"
-import Schedule from "./Pages/Schedule";
-//import AddDriverForm from "./Components/Forms/AddDriverForm"
-
-
-
-
-
-
+import Schedule from "./Pages/Schedule"
+import AdminProfile from "./Pages/AdminProfile"
 
 
 
@@ -29,9 +23,9 @@ function App() {
   <Route path="/Drivers" element={<Drivers/>}/>
   <Route path="/Livemap" element={<Livemap/>}/>
   <Route path="/Schedule" element={<Schedule/>}/>
+  <Route path="/AdminProfile" element={<AdminProfile/>}/>  
+
   
-  
- 
 </Routes>
 </BrowserRouter>
  
@@ -43,7 +37,5 @@ function App() {
 
 export default App;
 
-
-//<Route path="/AddDriverForm" element={<AddDriverForm/>}/>
-     
+    
 

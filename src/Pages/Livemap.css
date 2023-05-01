@@ -1,4 +1,4 @@
-.livemap
+.tittle
 {
 position: absolute;
 width: 70px;
@@ -16,3 +16,21 @@ line-height: 31px;
 color: #06152B;
 
 }
+.LiveMap-container {
+    display: flex;
+  }
+  
+  .LiveMap-map {
+    flex: 1;
+    height: 483px;
+    width: 1018px;
+    top:155px;
+    left:309px;
+  }
+  
+  .LiveMap-sidebar {
+    flex: 0 0 300px;
+   
+    padding: 20px;
+  }
+  

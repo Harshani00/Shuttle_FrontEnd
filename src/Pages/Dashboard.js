@@ -5,8 +5,6 @@ import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
 
-
-
 export default function Dashboard() {
   return (
     <div>
@@ -37,11 +35,6 @@ export default function Dashboard() {
 
       <div className="reports">Reports</div>
       
-
-
-
-      
-
       <div className="AvailableSeats">
         <div className="Seats">Seat Availabilty</div>
         <img src="./Images/seat.png" alt="" className="img"/>

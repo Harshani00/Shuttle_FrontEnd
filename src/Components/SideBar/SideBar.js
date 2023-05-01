@@ -2,12 +2,8 @@ import React from "react";
 import "./SideBar.css";
 import { SidebarData } from "./SidebarData";
 
-
-
 function Sidebar() {
   return (
-
-    
     <div className="Sidebar">
        {/*logo*/}
        <div className='logo'>
@@ -28,15 +24,8 @@ function Sidebar() {
             </li>
           );
         })}
-
-
-
-      </ul>
-      
-      
-      
+      </ul> 
     </div>
   );
 }
-
 export default Sidebar;

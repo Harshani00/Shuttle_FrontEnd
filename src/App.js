@@ -7,6 +7,8 @@ import Drivers from "./Pages/Drivers"
 import Livemap from "./Pages/Livemap"
 import Schedule from "./Pages/Schedule"
 import AdminProfile from "./Pages/AdminProfile"
+import Logout from "./Pages/Logout"
+
 
 
 
@@ -24,6 +26,7 @@ function App() {
   <Route path="/Livemap" element={<Livemap/>}/>
   <Route path="/Schedule" element={<Schedule/>}/>
   <Route path="/AdminProfile" element={<AdminProfile/>}/>  
+  <Route path="/Logout" element={<Logout/>}/>
 
   
 </Routes>

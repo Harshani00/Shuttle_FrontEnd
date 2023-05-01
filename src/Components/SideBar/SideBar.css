@@ -1,10 +1,7 @@
 
 .Sidebar
-{
-    /*height: 730px;
-    width: 240px;
-    background-color: #631717;*/
-    position: absolute;
+{  
+position: absolute;
 width: 240px;
 height: 739px;
 left: 0px;

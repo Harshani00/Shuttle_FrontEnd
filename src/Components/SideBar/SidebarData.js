@@ -10,7 +10,7 @@ export const SidebarData = [
   {
     title:"Dashboard",
     icon: <GridViewIcon/>,
-    link:"/dashboard",
+    link:"/dashboard", 
   },
   {
     title:"Buses",
@@ -20,12 +20,12 @@ export const SidebarData = [
   {
     title:"Drivers",
     icon: <PersonOutlineIcon/>,
-    link:"/drivers",
+    link:"/drivers", 
   },
    {
     title:"Schedule",
     icon: <CalendarMonthSharpIcon/>,
-    link:"/schedule",
+    link:"/schedule", 
   },
   {
     title:"Live Map",
@@ -37,6 +37,4 @@ export const SidebarData = [
     icon: <LogoutIcon/>,
     link:"/logout",
   },
-  
-
 ];

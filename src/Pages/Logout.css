@@ -1,5 +1,5 @@
-button {
-  background-color: #EDFFEF; /* Green */
+/*button {
+  background-color: #EDFFEF; 
   
 }
 
@@ -9,4 +9,43 @@ button:hover {
 
 button:active {
   background-color: #4CAF50;
+}*/
+.logout-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+ 
 }
+
+.center-container {
+  text-align: center;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  display: flex;
+  
+
+}
+
+.logout-button {
+  padding: 10px 50px;
+  font-size: 18px;
+  background-color: #93CDB1;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins';
+ /*padding-right: 300px;*/
+ 
+
+}
+.logout-button:hover {
+  background-color: green;
+}
+
+

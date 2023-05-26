@@ -31,3 +31,34 @@ height: 21px;
 left: 1277px;
 top: 58px;
 }
+  .sidebar {
+    position: fixed;
+    top: 15%;
+    right: 0;
+    width: 250px;
+    height: 90%;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+    z-index: 999; /* Set a higher z-index value */
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  }
+  .sidebar-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  /*
+  .NotificationsNoneIcon.active,
+  .ArrowDropDownIcon.active {
+    color: #007bff; /* Customize the active icon color 
+  }*/
+  
+  /*.dropdownmenu.active .dropdown-header {
+    background-color: #007bff; /* Customize the active dropdown header background color 
+    color: #fff; /* Customize the active dropdown header text color 
+  }*/
+  

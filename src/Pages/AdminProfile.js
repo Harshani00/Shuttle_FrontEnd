@@ -36,7 +36,7 @@ export default function AdminProfile() {
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <br />
-        <button type="button" onClick={handleSave}>Save</button>
+        <button type="button"  onClick={handleSave}>Save</button>
       </form>
     </div>
   );

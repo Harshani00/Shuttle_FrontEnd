@@ -37,8 +37,6 @@ line-height: 45px;
 
 color: #000000;
 
-
-  
   
 }
 
@@ -49,9 +47,9 @@ color: #000000;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  width:320px;
+  width: 320px;
 }
-.button:hover
-{
-  color: green;
+
+.admin-form button:hover {
+  background-color: green;
 }

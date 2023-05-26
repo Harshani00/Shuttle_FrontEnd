@@ -8,6 +8,7 @@ const busesData = [
   { busid: "001", busno: "NC 2567", capacity: "50"  },
   { busid: "002", busno: "ND 2858", capacity: "50"  },
   { busid: "003", busno: "NC 4566", capacity: "50" },
+  { busid: "004", busno: "NC 9623", capacity: "50" },
 ];
 
 

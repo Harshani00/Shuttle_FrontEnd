@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
 
   const toggleDropdown = () => {
@@ -16,22 +17,37 @@ export default function Profile() {
     navigate('/AdminProfile');
   };
 
+  const handleNotificationClick = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <div>
       <div>
-        <NotificationsNoneIcon className='NotificationsNoneIcon'/>
+        <NotificationsNoneIcon
+          className={`NotificationsNoneIcon ${showSidebar ? 'active' : ''}`}
+          onClick={handleNotificationClick}
+        />
       </div>
       <div className='name'>John Doe</div>
-      <div className='dropdownmenu'>
+      <div className={`dropdownmenu ${showSidebar ? 'active' : ''}`}>
         <div className='dropdown-header' onClick={toggleDropdown}>
-          <ArrowDropDownIcon className='ArrowDropDownIcon'/>
+          <ArrowDropDownIcon className={`ArrowDropDownIcon ${showSidebar ? 'active' : ''}`} />
         </div>
         {isOpen && (
           <div className='dropdown-items'>
-            <button className='dropdown-item' onClick={handleProfileClick}>Profile</button>
+            <button className='dropdown-item' onClick={handleProfileClick}>
+              Profile
+            </button>
           </div>
         )}
       </div>
+      {showSidebar && (
+        <div className='sidebar'>
+          <div className='sidebar-title'>You don't have any notifications</div>
+          <div className='sidebar-content'>Please check back later</div>
+        </div>
+      )}
     </div>
   );
 }
